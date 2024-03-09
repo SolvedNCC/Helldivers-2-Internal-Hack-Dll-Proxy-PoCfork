@@ -1,4 +1,4 @@
-# Helldivers-2-Internal-Hack-Dll-Proxy-PoC
+# Helldivers-2-Internal-Hack-Dll-Proxy-PoC SOLVED
 
 #### This is a PoC that I created to learn about dll proxy using C++ on 64bit application / game.
 
