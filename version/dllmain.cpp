@@ -14,56 +14,11 @@
 HANDLE hMainThread;
 HMODULE g_hModule;
 
-// Function to initialize and show the console window
-void InitializeConsole() {
-    FILE* pFile = nullptr;
-    AllocConsole();
-    //SetConsoleTitle(_XOR_(L"Helldivers 2 DLL Proxy PoC"));
-    freopen_s(&pFile, _XOR_("CONOUT$"), _XOR_("w"), stdout);
-}
-
-void DestroyConsole()
-{
-    DestroyWindow(GetConsoleWindow());
-    FreeConsole();
-}
-
-//Check Key Pressed
-bool keyPressed(int vKey)
-{
-    return (GetAsyncKeyState(vKey) & 1);
-}
-
 //Console Menu using checkbox
 struct Checkbox {
     std::string title;
     bool checked;
 };
-
-// Function to display checkboxes
-void displayCheckboxes(const std::vector<Checkbox>& checkboxes, size_t selectedCheckbox) {
-    system("cls"); // Clear the console (Windows specific)
-
-    printf(_XOR_("[Init] - Helldiver 2 PoC DLL Proxy...\n"));
-    printf(_XOR_("[Init] - Thanks to cfemen and gir489...\n"));
-
-    printf(_XOR_("[Ready] : Select some of the features below by pressing the [Space] key.\n"));
-    printf(_XOR_("[Ready] : Press [Enter] to run the feature you selected.\n"));
-    printf(_XOR_("[Ready] : After pressing [Enter], the selected features cannot be changed.\n"));
-
-    std::cout << _XOR_("Checkboxes:\n");
-    for (size_t i = 0; i < checkboxes.size(); ++i) {
-        if (i == selectedCheckbox) {
-            std::cout << "> ";
-        }
-        else {
-            std::cout << "  ";
-        }
-
-        std::cout << "[" << (checkboxes[i].checked ? 'X' : ' ') << "] " << checkboxes[i].title << "\n";
-    }
-    std::cout << "\n";
-}
 
 DWORD WINAPI Payload(LPVOID lpParam)
 {
